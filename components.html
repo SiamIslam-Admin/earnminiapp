@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Component Catalogue - EarnMiniApp</title>
+  <link rel="stylesheet" href="styles/theme.css">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <style>
+    /* Catalogue specific styles */
+    .catalogue-section {
+      background: var(--bg-surface-glass);
+      border-radius: var(--border-radius-lg);
+      padding: 1.5rem;
+      border: 1px dashed rgba(255, 255, 255, 0.1);
+      margin-bottom: 2rem;
+    }
+    .catalogue-header {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 0.5rem;
+    }
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+      gap: 1rem;
+    }
+    .main-title {
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="layout-container">
+    <div class="main-title">
+      <h1 class="text-gradient">Component Catalogue</h1>
+      <p class="text-secondary">Frontend Design System & UI Primitives</p>
+    </div>
+
+    <!-- SpinWheel Section -->
+    <section class="catalogue-section">
+      <div class="catalogue-header">
+        <h2>SpinWheel</h2>
+        <p class="text-muted">Central game loop component</p>
+      </div>
+      <div id="wheel-container"></div>
+    </section>
+
+    <!-- Reward Card Section (Static Display) -->
+    <section class="catalogue-section">
+      <div class="catalogue-header">
+        <h2>Reward Card</h2>
+        <p class="text-muted">Displayed after a successful spin</p>
+      </div>
+      <div id="static-reward-card-container" style="display: flex; justify-content: center;"></div>
+    </section>
+
+    <!-- Feature Cards Section -->
+    <section class="catalogue-section">
+      <div class="catalogue-header">
+        <h2>FeatureCards</h2>
+        <p class="text-muted">Variants: emerald, colorful, gold</p>
+      </div>
+      <div class="component-grid" id="feature-cards-container"></div>
+      <p style="margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+        <strong>How it works:</strong> The FeatureCard is a square, clickable button designed for navigation or triggering major actions (like opening the Raffle or inviting friends). The entire card acts as a touch target. The name of the feature sits cleanly in a green bottom section, making it easy to read. Click the cards above to see their animation!
+      </p>
+    </section>
+
+    <!-- Task Cards Section -->
+    <section class="catalogue-section">
+      <div class="catalogue-header">
+        <h2>TaskCards</h2>
+        <p class="text-muted">For missions and earning actions</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.75rem;" id="task-cards-container"></div>
+      <p style="margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+        <strong>How it works:</strong> The TaskCard is used for listing missions (like joining a channel or watching a video). It supports three visual states:<br><br>
+        1. <strong>Pending:</strong> Displays a yellow "Go" button to start the task.<br>
+        2. <strong>Checking:</strong> The user has clicked the task but needs to verify it. Shows a grey "Go" button (in case they need to return to the task) and a cyan "Check" button to verify completion.<br>
+        3. <strong>Completed:</strong> The entire card dims slightly and the button becomes a grey, disabled "Done" button.
+      </p>
+    </section>
+
+    <!-- Task Banner Section -->
+    <section class="catalogue-section">
+      <div class="catalogue-header">
+        <h2>Task Banners</h2>
+        <p class="text-muted">Thin entry points for the home page</p>
+      </div>
+      <div id="task-banner-container"></div>
+      <p style="margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+        <strong>How it works:</strong> The TaskBanner is a slimmer version of the TaskCard, meant to be placed on the Home page to encourage users to enter the full task section. It uses the exact same color variables as the TaskCard to maintain consistency.
+      </p>
+    </section>
+
+    <!-- Buttons & Badges Section -->
+    <section class="catalogue-section">
+      <div class="catalogue-header">
+        <h2>Buttons & Badges</h2>
+        <p class="text-muted">UI Primitives</p>
+      </div>
+      
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+        <button class="btn btn-primary">Primary Button</button>
+        <button class="btn btn-vibrant">Vibrant Button</button>
+        <button class="btn btn-secondary">Secondary Button</button>
+      </div>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <span class="badge badge-emerald">Active</span>
+        <span class="badge badge-gold">Premium</span>
+      </div>
+    </section>
+  </div>
+
+  <!-- Reward Modal Overlay -->
+  <div class="modal-overlay" id="reward-modal">
+    <div class="modal-content" id="modal-content-container"></div>
+  </div>
+
+  <script type="module">
+    import { SpinWheel } from './js/components/SpinWheel.js';
+    import { createFeatureCard, createTaskCard, createTaskBanner, createRewardCard } from './js/components/Cards.js';
+
+    // Render static reward card
+    document.getElementById('static-reward-card-container').appendChild(
+      createRewardCard({ rewardText: '1000 Coins' })
+    );
+
+    function throwConfetti() {
+      const colors = ['#fbbf24', '#ec4899', '#8b5cf6', '#06b6d4', '#5fff7a'];
+      for (let i = 0; i < 200; i++) { // Increased number
+        const confetti = document.createElement('div');
+        confetti.style.position = 'fixed';
+        
+        // Spawn randomly from left 30% or right 30% of the screen
+        const isLeft = Math.random() > 0.5;
+        const startX = isLeft 
+          ? (Math.random() * (window.innerWidth * 0.3)) 
+          : (window.innerWidth - Math.random() * (window.innerWidth * 0.3));
+        
+        confetti.style.left = startX + 'px';
+        confetti.style.top = '-20px'; // Start above screen
+        
+        // Smaller sizes
+        confetti.style.width = (Math.random() * 6 + 4) + 'px';
+        confetti.style.height = (Math.random() * 12 + 6) + 'px';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.zIndex = '9999';
+        confetti.style.pointerEvents = 'none';
+        confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+        document.body.appendChild(confetti);
+
+        // Drift towards the center
+        const direction = isLeft ? 1 : -1;
+        const driftX = direction * (Math.random() * 300 + 100) + (Math.random() - 0.5) * 100; 
+        const endY = window.innerHeight + 100;
+        const rot = (Math.random() * 1080 + 360) * direction;
+
+        const animation = confetti.animate([
+          { transform: `translate(0px, 0px) rotate(0deg) scale(0)`, opacity: 0 },
+          { transform: `translate(0px, 50px) rotate(${rot * 0.1}deg) scale(1)`, opacity: 1, offset: 0.1 },
+          { transform: `translate(${driftX}px, ${endY}px) rotate(${rot}deg) scale(1)`, opacity: 1 }
+        ], {
+          duration: Math.random() * 2500 + 2000, // Slower fall
+          delay: Math.random() * 800, // Staggered start for continuous rain effect
+          easing: 'ease-in',
+          fill: 'forwards'
+        });
+
+        animation.onfinish = () => confetti.remove();
+      }
+    }
+
+    // 1. Initialize SpinWheel
+    const wheelSegments = [
+      { label: '10 🪙' },
+      { label: '50 🪙' },
+      { label: '100 🪙' },
+      { label: 'Empty' },
+      { label: '500 🪙' },
+      { label: 'Raffle 🎫' },
+      { label: '10 🪙' },
+      { label: 'Empty' }
+    ];
+
+    const wheel = new SpinWheel('wheel-container', {
+      segments: wheelSegments,
+      size: 320,
+      theme: 'emerald',
+      onSpinEnd: (winner) => {
+        const modal = document.getElementById('reward-modal');
+        const modalContent = document.getElementById('modal-content-container');
+        modalContent.innerHTML = '';
+        
+        const card = createRewardCard({
+          rewardText: winner.label,
+          onCollect: () => modal.classList.remove('active')
+        });
+        
+        modalContent.appendChild(card);
+        modal.classList.add('active');
+        
+        if (winner.label !== 'Empty') {
+          throwConfetti();
+        }
+      }
+    });
+
+    // 2. Render Feature Cards
+    const fcContainer = document.getElementById('feature-cards-container');
+    
+    const raffleCard = createFeatureCard({
+      title: 'Raffle',
+      icon: '🎫',
+      variant: 'emerald',
+      badgeText: 'Live'
+    });
+
+    const contestCard = createFeatureCard({
+      title: 'Contest',
+      icon: '🏆',
+      variant: 'colorful'
+    });
+
+    const inviteCard = createFeatureCard({
+      title: 'Invite',
+      icon: '🤝',
+      variant: 'gold',
+      badgeText: 'Hot'
+    });
+
+    fcContainer.appendChild(raffleCard);
+    fcContainer.appendChild(contestCard);
+    fcContainer.appendChild(inviteCard);
+
+    // 3. Render Task Cards
+    const tcContainer = document.getElementById('task-cards-container');
+    
+    tcContainer.appendChild(createTaskCard({
+      title: 'Join Telegram Channel',
+      reward: 500,
+      icon: '✈️'
+    }));
+
+    tcContainer.appendChild(createTaskCard({
+      title: 'Follow on X',
+      reward: 300,
+      icon: '🐦'
+    }));
+
+    tcContainer.appendChild(createTaskCard({
+      title: 'Daily Check-in',
+      reward: 100,
+      icon: '✅',
+      completed: true
+    }));
+
+    tcContainer.appendChild(createTaskCard({
+      title: 'Watch YouTube Video',
+      reward: 200,
+      icon: '▶️',
+      status: 'checking'
+    }));
+
+    // 4. Render Task Banner
+    const tbContainer = document.getElementById('task-banner-container');
+    tbContainer.appendChild(createTaskBanner({
+      title: 'Active Tasks Available!',
+      subtitle: 'Earn more coins now',
+      icon: '🎯',
+      rewardAmount: 60,
+      rewardIcon: '💎'
+    }));
+
+    // 5. Modal & Confetti Logic
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+:root {
+  /* Emerald Theme Colors */
+  --emerald-900: #064e3b;
+  --emerald-800: #065f46;
+  --emerald-700: #047857;
+  --emerald-600: #008f40;
+  --emerald-500: #5fff7a;
+  --emerald-400: #34d399;
+  --emerald-300: #6ee7b7;
+  --emerald-200: #a7f3d0;
+  --emerald-100: #d1fae5;
+  --emerald-50: #ecfdf5;
+
+  /* Accent & Vibrant Colors for Games/Rewards */
+  --accent-gold: #fbbf24;
+  --accent-orange: #f97316;
+  --accent-pink: #ec4899;
+  --accent-purple: #8b5cf6;
+  --accent-cyan: #06b6d4;
+
+  /* Backgrounds & Surfaces (Dark Mode Default for Crypto/Games) */
+  --bg-dark: #0f172a;
+  --bg-surface: #1e293b;
+  --bg-surface-light: #334155;
+  --bg-surface-glass: rgba(30, 41, 59, 0.7);
+
+  /* Text Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverse: #0f172a;
+
+  /* Gradients */
+  --gradient-emerald: linear-gradient(135deg, var(--emerald-400), var(--emerald-600));
+  --gradient-gold: linear-gradient(135deg, #fef08a, var(--accent-gold));
+  --gradient-vibrant: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+
+  /* Component Colors */
+  --feature-card-btn-bg: #008f40;
+  --feature-card-btn-border: #5fff7a;
+
+  --task-card-bg-start: #06bf00;
+  --task-card-bg-end: #065f46;
+  --task-card-border: #99eea7;
+  --task-card-btn-bg: #ecd610f6;
+  --task-card-btn-text: #0f172a;
+
+  --task-card-check-btn-bg: #e1f59360;
+  --task-card-check-btn-text: #181f12;
+
+  --task-banner-btn-bg: #0b933a; /* Lighter green than the banner background */
+  --task-banner-btn-border: #5fff7a;
+  --task-banner-btn-text: #ffffff;
+
+  /* Typography */
+  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-family-display: 'Outfit', 'Inter', sans-serif;
+
+  /* Borders & Shadows */
+  --border-radius-sm: 0.5rem;
+  --border-radius-md: 1rem;
+  --border-radius-lg: 1.5rem;
+  --border-radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-glow-emerald: 0 0 20px rgba(16, 185, 129, 0.4);
+  --shadow-glow-gold: 0 0 20px rgba(251, 191, 36, 0.4);
+
+  /* Animations */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-base: 0.25s ease-in-out;
+  --transition-bounce: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
