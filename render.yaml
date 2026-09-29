@@ -5,6 +5,7 @@ databases:
     user: earnminiapp_user
 
 services:
+  # ===== Backend (Go) =====
   - type: web
     name: earnminiapp-backend
     runtime: go
@@ -17,3 +18,24 @@ services:
         fromDatabase:
           name: earnminiapp-db
           property: connectionString
+      - key: PORT
+        value: 10000
+
+  # ===== Frontend (Static) =====
+  - type: web
+    name: earnminiapp-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    plan: free
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: https://earnminiapp-1.onrender.com
+        fromService:
+          type: web
+          name: earnminiapp-backend
+          property: host
