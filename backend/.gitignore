@@ -1,0 +1,50 @@
+# Binaries & Build Output
+bin/
+dist/
+/server
+/server.exe
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+.env.local
+.env.*.local
+*.key
+*.pem
+
+# User Uploads
+uploads/*
+!uploads/.gitkeep
+
+# Temporary / Scratch Files
+tmp/
+temp/
+scratch/
+*.log
+
+# Test Artifacts & Coverage
+*.out
+*.test
+coverage.html
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS Specific
+.DS_Store
+Thumbs.db
+
+# Agent Metadata & Workspace Artifacts
+.agents/
+.agent/
+

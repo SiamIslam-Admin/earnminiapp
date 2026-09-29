@@ -1,0 +1,141 @@
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-full);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all var(--transition-bounce);
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn-primary {
+  background: var(--gradient-emerald);
+  color: var(--bg-dark);
+  box-shadow: var(--shadow-glow-emerald);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.6);
+  filter: brightness(1.1);
+}
+
+.btn-secondary {
+  background: var(--bg-surface-light);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-vibrant {
+  background: var(--gradient-vibrant);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+.btn-vibrant:hover {
+  filter: brightness(1.1);
+}
+
+/* --- Cards --- */
+.card {
+  background: var(--bg-surface);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-emerald {
+  border-color: rgba(52, 211, 153, 0.3);
+  background: linear-gradient(180deg, rgba(30, 41, 59, 1) 0%, rgba(6, 78, 59, 0.4) 100%);
+}
+
+.card-colorful {
+  border-color: rgba(139, 92, 246, 0.3);
+  background: linear-gradient(180deg, rgba(30, 41, 59, 1) 0%, rgba(139, 92, 246, 0.2) 100%);
+}
+
+.card-gold {
+  border-color: rgba(251, 191, 36, 0.3);
+  background: linear-gradient(180deg, rgba(30, 41, 59, 1) 0%, rgba(251, 191, 36, 0.15) 100%);
+}
+
+.card-title {
+  font-family: var(--font-family-display);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Badges --- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge-emerald {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--emerald-400);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-gold {
+  background: rgba(251, 191, 36, 0.15);
+  color: var(--accent-gold);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+/* --- Modals / Overlays --- */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 23, 42, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 400px;
+  transform: translateY(20px) scale(0.95);
+  transition: all var(--transition-bounce);
+  display: flex;
+  justify-content: center;
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0) scale(1);
+}

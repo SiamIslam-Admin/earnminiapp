@@ -1,0 +1,244 @@
+{
+  "userProfile": {
+    "id": 123456789,
+    "telegram_id": 123456789,
+    "first_name": "Player",
+    "username": "player_one",
+    "photo_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=player_one",
+    "level": 1,
+    "energy": 50,
+    "max_energy": 50,
+    "spins": 12,
+    "diamonds": 124,
+    "balance_usd": 0.56,
+    "ton_wallet": "0x58c679f291079d3E01a6132712217c4618e7E1d2",
+    "phone": "+1 (555) 019-2834",
+    "goal_usd": 1.0,
+    "goal_left": 0.44,
+    "is_admin": false
+  },
+  "wheelSegments": [
+    { "label": "Diamond", "value": "gem", "image": "./assets/diamond_animated.gif" },
+    { "label": "Coins", "value": "coins", "image": "./assets/SingleCoin_animated.gif" },
+    { "label": "Diamond", "value": "gem", "image": "./assets/diamond_animated.gif" },
+    { "label": "Jackpot", "value": "jackpot", "image": "./assets/coinSack_animated.gif" },
+    { "label": "Tickets", "value": "tickets", "image": "./assets/ticket_animated.gif" },
+    { "label": "Diamond", "value": "gem", "image": "./assets/diamond_animated.gif" }
+  ],
+  "mockTasksBanner": [
+    { "title": "Active Tasks Available!", "subtitle": "Earn more coins now", "icon": "🎯", "rewardAmount": 60 },
+    { "title": "Join Telegram Channel", "subtitle": "Stay updated", "icon": "📣", "rewardAmount": 500 },
+    { "title": "Daily Check-in", "subtitle": "Come back tomorrow", "icon": "📅", "rewardAmount": 100 }
+  ],
+  "featureCards": {
+    "left": [
+      { "title": "Raffle", "icon": "./assets/raffleFeatureCardIcon.png", "variant": "emerald", "badge": "HOT", "badgeColor": "gold" },
+      { "title": "Contest", "icon": "./assets/contestTrophy_animated.gif", "variant": "colorful" },
+      { "title": "Gift", "icon": "./assets/GiftBox_animated.gif", "variant": "gold", "badge": "FREE", "badgeColor": "red" },
+      { "title": "Team", "icon": "./assets/inviteFeatureCardIcon.png", "variant": "emerald" }
+    ],
+    "right": [
+      { "title": "+ Spins", "icon": "./assets/SpinWheel_animated.gif", "variant": "colorful", "badge": "NEW", "badgeColor": "emerald" },
+      { "title": "Sign In", "icon": "./assets/signin-iconFetareCardIcon.png", "variant": "emerald", "badge": "1", "badgeColor": "red" },
+      { "title": "Wallet", "icon": "./assets/SingleCoin_animated.gif", "variant": "gold" }
+    ]
+  },
+  "dailyRewards": {
+    "currentDay": 1,
+    "canClaimToday": true,
+    "days": [
+      { "day": 1, "reward": "+80", "icon": "./assets/diamond_animated.gif", "active": true },
+      { "day": 2, "reward": "+80", "icon": "./assets/diamond_animated.gif" },
+      { "day": 3, "reward": "+200", "icon": "./assets/giftIconInDailySignIn.png" },
+      { "day": 4, "reward": "+90", "icon": "./assets/diamond_animated.gif" },
+      { "day": 5, "reward": "+90", "icon": "./assets/diamond_animated.gif" },
+      { "day": 6, "reward": "+90", "icon": "./assets/diamond_animated.gif" },
+      { "day": 7, "reward": "MEGA 6K", "icon": "./assets/giftIconInDailySignIn.png", "isMega": true }
+    ]
+  },
+  "teamData": {
+    "totalCount": 3,
+    "activeCount": 2,
+    "inviteUrl": "https://t.me/SpinCraft_bot/earnnow?startapp=ref_user",
+    "shareText": "Join me on Spin Craft and spin the wheel for massive cash rewards! 🎰💰",
+    "currentTier": "Bronze",
+    "tierRewards": ["+3 Free Spins per friend", "10% Task Commissions", "VIP Pool Access"],
+    "members": [
+      { "id": "1", "name": "Mahoraga", "joinedDate": "Today, 14:10", "joinedChannel": true },
+      { "id": "2", "name": "Tiku", "joinedDate": "Yesterday, 18:22", "joinedChannel": true },
+      { "id": "3", "name": "Gojo_Satoru", "joinedDate": "Aug 14, 09:15", "joinedChannel": false }
+    ]
+  },
+  "contests": {
+    "title": "Weekly Spin Championship",
+    "prizePool": "$500.00 USDT",
+    "timeLeft": "2d 14h 32m 45s",
+    "topWinners": [
+      { "rank": 1, "name": "CryptoKing", "avatar": "👑", "spins": 284, "prize": "$250.00" },
+      { "rank": 2, "name": "Elena_TON", "avatar": "💎", "spins": 219, "prize": "$125.00" },
+      { "rank": 3, "name": "ViperX", "avatar": "⚡", "spins": 178, "prize": "$75.00" }
+    ],
+    "otherRankings": [
+      { "rank": 4, "name": "Satoshi99", "avatar": "🚀", "spins": 142, "prize": "$20.00" },
+      { "rank": 5, "name": "LuckyStrike", "avatar": "🍀", "spins": 118, "prize": "$10.00" },
+      { "rank": 6, "name": "ApexSpinner", "avatar": "🔥", "spins": 96, "prize": "$8.00" },
+      { "rank": 7, "name": "Dmitri_K", "avatar": "🎯", "spins": 84, "prize": "$5.00" },
+      { "rank": 8, "name": "AirdropHunter", "avatar": "🪂", "spins": 63, "prize": "$3.00" },
+      { "rank": 9, "name": "ZenMaster", "avatar": "🧘", "spins": 51, "prize": "$2.00" },
+      { "rank": 10, "name": "MoonWalker", "avatar": "🌕", "spins": 45, "prize": "$2.00" }
+    ],
+    "userStatus": {
+      "rank": 42,
+      "spins": 12,
+      "projectedPrize": "$0.00"
+    }
+  },
+  "tasksPage": {
+    "readyToClaim": {
+      "id": "ready-1",
+      "title": "Extra for 1 invitation",
+      "icon": "./assets/inviteFeatureCardIcon.png",
+      "rewardGems": 300
+    },
+    "tasks": [
+      {
+        "id": "special-1",
+        "category": "special",
+        "title": "Reach lvl 3 FOR THE FIRST TIME!",
+        "icon": "./assets/coin_3d.png",
+        "rewardGems": 1600,
+        "progress": { "current": 1, "total": 3 },
+        "status": "pending"
+      },
+      {
+        "id": "special-2",
+        "category": "special",
+        "title": "Invite 3 active spinners",
+        "icon": "./assets/inviteFeatureCardIcon.png",
+        "rewardGems": 3000,
+        "progress": { "current": 2, "total": 3 },
+        "status": "pending"
+      },
+      {
+        "id": "special-3",
+        "category": "special",
+        "title": "Join Spin Craft VIP Get More Rewards",
+        "icon": "./assets/ticket_animated.gif",
+        "rewardGems": 3200,
+        "secondaryRewardGems": 1,
+        "status": "pending"
+      },
+      {
+        "id": "daily-1",
+        "category": "daily",
+        "title": "Spin the Lucky Wheel 5 times",
+        "icon": "./assets/ticket_animated.gif",
+        "rewardGems": 160,
+        "progress": { "current": 3, "total": 5 },
+        "status": "pending"
+      },
+      {
+        "id": "daily-2",
+        "category": "daily",
+        "title": "Complete 10 tasks today",
+        "icon": "./assets/giftIconInDailySignIn.png",
+        "rewardGems": 800,
+        "progress": { "current": 4, "total": 10 },
+        "status": "pending"
+      },
+      {
+        "id": "social-1",
+        "category": "socials",
+        "title": "Subscribe to Telegram Channel",
+        "icon": "📣",
+        "rewardGems": 500,
+        "status": "pending"
+      },
+      {
+        "id": "social-2",
+        "category": "socials",
+        "title": "Follow Spin Craft on X (Twitter)",
+        "icon": "🐦",
+        "rewardGems": 400,
+        "status": "pending"
+      }
+    ]
+  },
+  "walletPage": {
+    "availableBalanceUsd": 0.56,
+    "connected": false,
+    "tonWalletAddress": "0x58c679f291079d3E01a6132712217c4618e7E1d2",
+    "phone": "+1 (555) 019-2834",
+    "presetAmounts": [1.0, 2.5, 5.0, 10.0],
+    "gasFeePercent": 2.0,
+    "recentTransactions": [
+      {
+        "id": "tx-1",
+        "title": "Spin Wheel Reward",
+        "category": "spins",
+        "date": "Today, 14:32",
+        "txId": "TX-84921",
+        "icon": "./assets/ticket_animated.gif",
+        "isImageIcon": true,
+        "amount": "+$0.20",
+        "status": "completed",
+        "hash": "0x8f2a1...4921b"
+      },
+      {
+        "id": "tx-2",
+        "title": "Daily Check-in Bonus",
+        "category": "spins",
+        "date": "Today, 10:15",
+        "txId": "TX-84918",
+        "icon": "./assets/giftIconInDailySignIn.png",
+        "isImageIcon": true,
+        "amount": "+80",
+        "isDiamond": true,
+        "status": "completed",
+        "hash": "0x7e1c4...9183a"
+      },
+      {
+        "id": "tx-3",
+        "title": "Friend Invite Bonus",
+        "category": "tasks",
+        "date": "Yesterday, 19:40",
+        "txId": "TX-83904",
+        "icon": "./assets/inviteFeatureCardIcon.png",
+        "isImageIcon": true,
+        "amount": "+300",
+        "isDiamond": true,
+        "status": "completed",
+        "hash": "0x3a9d2...3904f"
+      },
+      {
+        "id": "tx-4",
+        "title": "USDT (BEP20) Withdrawal",
+        "category": "withdrawals",
+        "date": "Aug 12, 2026",
+        "txId": "TX-78210",
+        "icon": "🏧",
+        "isImageIcon": false,
+        "amount": "-$1.00",
+        "status": "processing",
+        "hash": "0x1b8c0...8210e"
+      }
+    ]
+  },
+  "rafflesPage": {
+    "ongoing": [
+      { "id": "#VIP260803", "cashReward": 20, "coinRewardStr": "1M", "participants": 58, "tickets": 200, "status": "ongoing" },
+      { "id": "#LUCK260802", "cashReward": 135, "coinRewardStr": "2M", "participants": 4120, "tickets": 8265, "status": "ongoing" }
+    ],
+    "ended": [
+      { "id": "#VIP260801", "cashReward": 20, "coinRewardStr": "1M", "participants": 127, "tickets": 428, "status": "ended" },
+      { "id": "#VIP260706", "cashReward": 16, "coinRewardStr": "475K", "participants": 85, "tickets": 310, "status": "ended" }
+    ],
+    "prizeTiers": [
+      { "medal": "🥇", "rank": "1st Prize", "amount": "$8.00", "multiplier": "x 1 Winner", "highlight": true },
+      { "medal": "🥈", "rank": "2nd Prize", "amount": "$3.00", "multiplier": "x 2 Winners", "highlight": false },
+      { "medal": "🥉", "rank": "3rd Prize", "amount": "$1.00", "multiplier": "x 6 Winners", "highlight": false },
+      { "medal": "💎", "rank": "4th Prize", "amount": "5,000", "icon": "./assets/diamond_animated.gif", "multiplier": "x 20 Winners", "highlight": false },
+      { "medal": "💎", "rank": "5th Prize", "amount": "800", "icon": "./assets/diamond_animated.gif", "multiplier": "x 1,125 Winners", "highlight": false }
+    ]
+  }
+}
