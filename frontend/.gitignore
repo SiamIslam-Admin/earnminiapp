@@ -1,31 +1,5 @@
-# Dependencies & Build Outputs
-node_modules/
-dist/
-dist-ssr/
-frontend/node_modules/
-frontend/dist/
-frontend/dist-ssr/
-
-# Environment Variables & Secrets
-.env
-.env.*
-!.env.example
-.env.local
-.env.*.local
-frontend/.env
-frontend/.env.*
-!frontend/.env.example
-frontend/.env.local
-frontend/.env.*.local
-*.key
-*.pem
-
-# Agent Metadata & Workspace Artifacts
-.agents/
-.agent/
-
 # Logs
-logs/
+logs
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -33,15 +7,31 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# IDE & Editor Settings
-.vscode/
-.idea/
+node_modules
+dist
+dist-ssr
+*.local
+
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+.env.local
+.env.*.local
+
+# Agent Metadata & Workspace Artifacts
+.agents/
+.agent/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 
-# OS Specific
-.DS_Store
-Thumbs.db

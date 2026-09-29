@@ -1,0 +1,7 @@
+{
+  "useMockData": false,
+  "apiBaseUrl": "https://craftspin.duckdns.org/api/v1",
+  "apiTimeoutMs": 10000,
+  "simulatedDelayMs": 800,
+  "enableTelegramVerification": true
+}
