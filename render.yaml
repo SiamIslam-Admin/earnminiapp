@@ -1,0 +1,19 @@
+databases:
+  - name: earnminiapp-db
+    plan: free
+    databaseName: earnminiapp
+    user: earnminiapp_user
+
+services:
+  - type: web
+    name: earnminiapp-backend
+    runtime: go
+    rootDir: backend
+    buildCommand: go build -o server ./cmd/server
+    startCommand: ./server
+    plan: free
+    envVars:
+      - key: postgresql://earnminiapp_db_user:0UqeXpQT4tS0un5VQI2c8yX0CX8FfJlm@dpg-datvkhbncjis73a6qikg-a/earnminiapp_db
+        fromDatabase:
+          name: earnminiapp-db
+          property: connectionString
